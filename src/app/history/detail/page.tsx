@@ -48,14 +48,14 @@ export default function HistoryDetail() {
               <p className="font-medium text-base leading-[19px] text-black">Sender</p>
               <div className="flex flex-row items-center gap-[5px]">
                 <p className="font-normal text-base leading-[19px] text-[#9395A4]">0x164...C8e6</p>
-                <Image src={copyIcon} alt='copy' />
+                <Image src={copyIcon} alt='copy' onClick={() => navigator.clipboard.writeText("0x164...C8e6")} />
               </div>
             </div>
             <div className="flex flex-col gap-[7px]">
               <p className="font-medium text-base leading-[19px] text-black">Receiver</p>
               <div className="flex flex-row items-center gap-[5px]">
                 <p className="font-normal text-base leading-[19px] text-[#9395A4]">0x164...C8e6</p>
-                <Image src={copyIcon} alt='copy' />
+                <Image src={copyIcon} alt='copy' onClick={() => navigator.clipboard.writeText("0x164...C8e6")} />
               </div>
             </div>
           </div>

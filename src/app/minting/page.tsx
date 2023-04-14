@@ -24,8 +24,8 @@ export default function Minting() {
         {/* Minting List */}
         <div className="grid grid-cols-1 gap-10 w-full px-[25px] pt-[8px] pb-[33px] overflow-y-auto">
           {
-            mintingList.map((mintingItem: any, index: any) => (
-              <MintingItem key={index} logo={mintingImage} name={mintingItem.name} symbol={mintingItem.symbol} volume={mintingItem.volume} id={mintingItem.id} />
+            mintingList.map((mintingItem: IMinting, index: number) => (
+              <MintingItem index={index} logo={mintingImage} name={mintingItem.name} symbol={mintingItem.symbol} volume={mintingItem.volume} id={mintingItem.id} />
             ))
           }
         </div>

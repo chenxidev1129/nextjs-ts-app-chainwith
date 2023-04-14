@@ -1,16 +1,15 @@
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Key } from 'react';
 
 export default function CoinItem({
-  key,
+  index,
   logo,
   name,
   symbol,
   volume,
   id
 }: {
-  key: Key,
+  index: number,
   logo: string | StaticImageData,
   name: string,
   symbol: string,
@@ -20,7 +19,7 @@ export default function CoinItem({
   const router = useRouter();
 
   return (
-    <div key={key} className="flex flex-row items-center gap-[19px] py-[11px]" onClick={() => router.push('/transfer/send?id=' + id)}>
+    <div key={index} className="flex flex-row items-center gap-[19px] py-[11px]" onClick={() => router.push('/transfer/send?id=' + id)}>
       <div className="w-[50px] h-[50px] rounded-full bg-[#FFE4C3] border-[1.5px] border-[#E4E5E8]">
         <Image className="rounded-full" src={logo} width={50} height={50} alt="coin" />
       </div>

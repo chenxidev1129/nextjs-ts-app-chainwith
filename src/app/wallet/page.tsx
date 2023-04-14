@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Key, useEffect, useState } from 'react';
 import Image from 'next/image';
 import MenuSwitch from '@/components/menuSwitch';
 import NftItem from '@/components/nftItem';
@@ -21,8 +21,8 @@ export default function Wallet() {
 
   const [expandStatus, setExpandStatus] = useState<Boolean>(false);
   const [switchStatus, setSwitchStatus] = useState<Boolean>(true);
-  const [tokenList, setTokenList]: any = useState<IToken[]>([]);
-  const [nftList, setNftList]: any = useState<INft[]>([]);
+  const [tokenList, setTokenList] = useState<IToken[]>([]);
+  const [nftList, setNftList] = useState<INft[]>([]);
 
   useEffect(() => {
     // Load token data
@@ -62,7 +62,7 @@ export default function Wallet() {
           {/* Serial Number */}
           <div className="flex flex-row gap-1 mt-4">
             <p className="font-medium text-xs leading-[14px] text-[#9395A4]">0x164...C8e6</p>
-            <Image src={copyIcon} alt="copy" />
+            <Image src={copyIcon} alt="copy" onClick={() => navigator.clipboard.writeText("0x164...C8e6")} />
           </div>
           {/* Button Group */}
           <div className="flex flex-row gap-[15px] justify-between mt-4">
@@ -92,16 +92,16 @@ export default function Wallet() {
         {/* Token List */}
         <div className="grid grid-cols-1 gap-[29px] w-full px-2.5 my-2 py-2.5 overflow-y-auto" style={{ display: switchStatus ? 'grid' : 'none' }}>
           {
-            tokenList.map((tokenItem: any, index: any) => (
-              <TokenItem key={index} logo={tokenImage} name={tokenItem.name} symbol={tokenItem.symbol} volume={tokenItem.volume} id={tokenItem.id} />
+            tokenList.map((tokenItem: IToken, index: number) => (
+              <TokenItem index={index} logo={tokenImage} name={tokenItem.name} symbol={tokenItem.symbol} volume={tokenItem.volume} id={tokenItem.id} />
             ))
           }
         </div>
         {/* NFT List */}
         <div className="grid grid-cols-1 gap-[18px] w-full px-2.5 my-2 py-2.5 overflow-y-auto" style={{ display: !switchStatus ? 'grid' : 'none' }}>
           {
-            nftList.map((nftItem: any, index: any) => (
-              <NftItem key={index} logo={nftImage} name={nftItem.name} symbol={nftItem.symbol} volume={nftItem.volume} id={nftItem.id} />
+            nftList.map((nftItem: INft, index: number) => (
+              <NftItem index={index} logo={nftImage} name={nftItem.name} symbol={nftItem.symbol} volume={nftItem.volume} id={nftItem.id} />
             ))
           }
         </div>

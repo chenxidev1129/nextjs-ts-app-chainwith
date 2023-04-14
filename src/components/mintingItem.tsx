@@ -1,16 +1,15 @@
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Key } from 'react';
 
 export default function MintingItem({
-  key,
+  index,
   logo,
   name,
   symbol,
   volume,
   id
 }: {
-  key: Key,
+  index: number,
   logo: string | StaticImageData,
   name: string,
   symbol: string,
@@ -20,7 +19,7 @@ export default function MintingItem({
   const router = useRouter();
 
   return (
-    <div key={key} className="flex w-full shadow-lg rounded-[10px] relative" onClick={() => router.push('/minting/detail?id=' + id)}>
+    <div key={index} className="flex w-full shadow-lg rounded-[10px] relative" onClick={() => router.push('/minting/detail?id=' + id)}>
       <Image src={logo} className="w-full" alt="minting" />
       <div className="absolute bottom-0 left-0 flex flex-row justify-between items-center w-full bg-white rounded-b-[10px] py-5 px-[15px]">
         <div className="flex flex-col gap-0.5">
