@@ -1,0 +1,11 @@
+<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => navigator.clipboard.writeText("0x164...C8e6")}>
+<g clip-path="url(#clip0_37_6225)">
+<rect x="5.9873" y="1.59814" width="6.63972" height="7.40896" stroke="#9395A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M8.21394 9.29045V12.5091H1.57422V5.1001H2.95078" stroke="#9395A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<defs>
+<clipPath id="clip0_37_6225">
+<rect width="14" height="14" fill="white" transform="translate(0.102539)" />
+</clipPath>
+</defs>
+</svg>
